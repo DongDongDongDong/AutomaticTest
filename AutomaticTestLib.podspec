@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AutomaticTestLib'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'AutomaticTestLib.'
 
 # This description is used to generate tags and improve search results.
@@ -30,8 +30,8 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'AutomaticTestLib/Classes/**/*'
-  
+  s.source_files = 'AutomaticTestLib/Classes/**/*.h'
+ s.vendored_frameworks = 'AutomaticTestLib/Products/**/*.framework'
   # s.resource_bundles = {
   #   'AutomaticTestLib' => ['AutomaticTestLib/Assets/*.png']
   # }

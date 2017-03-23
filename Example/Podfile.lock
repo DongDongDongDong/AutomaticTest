@@ -1,0 +1,16 @@
+PODS:
+  - AutomaticTestLib (1.0.5)
+
+DEPENDENCIES:
+  - AutomaticTestLib (from `../`)
+
+EXTERNAL SOURCES:
+  AutomaticTestLib:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AutomaticTestLib: 1d9fbfa29a9264d542e3a4cdb5e17406bc0f82f5
+
+PODFILE CHECKSUM: 66a9039ae1b1cb721a91fa3311ad60afb133beed
+
+COCOAPODS: 1.2.0
