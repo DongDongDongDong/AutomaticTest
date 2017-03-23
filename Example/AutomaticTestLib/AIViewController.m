@@ -7,7 +7,7 @@
 //
 
 #import "AIViewController.h"
-
+#import "testProject.h"
 @interface AIViewController ()
 
 @end
@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [testProject testMethod];
 }
 
 - (void)didReceiveMemoryWarning

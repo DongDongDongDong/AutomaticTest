@@ -1,0 +1,38 @@
+desc "Update Private Pod Spec ---wei"
+lane :rpodLib do |options|
+targetName = options[:targetName]
+tagName = options[:tagName]
+
+
+# 1. pod install
+cocoapods(
+clean: true,
+podfile: "./Example/Podfile"
+)
+
+# 2. podspec升级版本号
+version_bump_podspec(path: "./AutomaticTestLib.podspec", version_number: tagName)
+
+
+# 3. 提交代码到远程代码仓库
+#   1. git add .
+git_add(path: ".")
+#   2. git commit -m "xx"
+git_commit(path: ".", message: "升级版本")
+#   3. git push origin master
+push_to_git_remote
+
+#------judge if has tags-------#
+
+# 4. 打标签提交
+#   1. git tag 0.3.0
+add_git_tag(
+tag: tagName
+)
+#   2. git push —tags
+push_git_tags
+
+# 5. 提交podspecs
+# pod repo push XMGFMSpecs XMGFMBase.podspec
+pod_push(path: "./AutomaticTestLib.podspec", repo: "privateSpec",allow_warnings:true)
+end
